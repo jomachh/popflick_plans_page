@@ -1,37 +1,15 @@
+import { useMediaQuery } from "@react-hook/media-query";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.sass";
 import { Plan } from "../components/Plan";
 import blueBokeh from "../public/assets/blue-bokeh.png";
 import lightsBokeh from "../public/assets/lights-bokeh.png";
-
-const PLANS = [
-  {
-    title: "Free",
-    price: 0,
-    currency: "$",
-    features: [
-      "Full HD Resolution",
-      "Watch only free content",
-      "Some commercials",
-    ],
-    highlight: false,
-  },
-  {
-    title: "Premium",
-    price: 4.99,
-    currency: "$",
-    features: [
-      "Full HD Resolution",
-      "Watch entire catalog",
-      "Recommendations",
-      "Always Ad-free",
-    ],
-    highlight: true,
-  },
-];
+import { PLANS, PLANS_REV } from "../constants";
 
 export default function Home() {
+  const match = useMediaQuery("only screen and (max-width: 600px)");
+
   return (
     <div className={styles.container}>
       <Head>
@@ -57,9 +35,11 @@ export default function Home() {
               Already have an account? <strong>Login</strong>
             </h4>
             <div>
-              {PLANS.map((plan, index) => (
-                <Plan key={index} plan={plan} />
-              ))}
+              {match
+                ? PLANS_REV.map((plan, index) => (
+                    <Plan key={index} plan={plan} />
+                  ))
+                : PLANS.map((plan, index) => <Plan key={index} plan={plan} />)}
             </div>
           </div>
           <h2 className={styles.subscribe_text}>
