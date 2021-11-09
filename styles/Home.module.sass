@@ -1,100 +1,113 @@
-.container
-  padding: 0 2rem
+@import "lib/variables"
+@import "lib/mixin"
 
-.main
-  min-height: 100vh
-  padding: 4rem 0
-  flex: 1
+.container
   display: flex
   flex-direction: column
-  justify-content: center
   align-items: center
+  min-height: 180vh
+  z-index: 2
+  position: relative
 
-.footer
-  display: flex
-  flex: 1
-  padding: 2rem 0
-  border-top: 1px solid #eaeaea
-  justify-content: center
-  align-items: center
-
-  & a
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-grow: 1
-
-.title a
-  color: #0070f3
-  text-decoration: none
-
-  &:hover,
-
-  &:focus,
-
-  &:active
-    text-decoration: underline
+.subtitle
+  user-select: none
+  margin: -13px 0 0 0
+  color: white
+  font-style: normal
+  font-weight: normal
+  font-size: 21px
+  line-height: 27.43px
+  text-align: center
 
 .title
+  position: relative
+  user-select: none
+  color: white
+  font-weight: 700
+  font-style: normal
+  font-size: 45px
+  line-height: 58.59px
+  text-align: center
+  &::after
+    display: block
+    content: ''
+    margin: 12.5px auto
+    width: 602.25px
+    height: 6px
+    background-color: $accent_color
+
+.plans
+  background-color: $white
+  width: 668px
+  border-radius: 6px
+  margin-top: 79.5px
+  @include paddingVertical(35.23px, 65.54px)
+  @include paddingHorizontal(69.25px,69.25px)
+  div
+    display: flex
+    justify-content: space-around
+
+.plans_title
+  color: $dark_text_color
+  font-weight: 700
+  font-style: normal
+  text-align: center
+  font-size: 25px
+  line-height: 32.52px
   margin: 0
-  line-height: 1.15
-  font-size: 4rem
 
-  &,
-  .description
-    text-align: center
+.plans_helptext
+  color: $dark_text_color
+  font-weight: 400
+  font-style: normal
+  font-size: 9.99px
+  line-height: 13.61px
+  text-align: center
+  margin: 0
+  @include marginVertical(16.88px, 34.46px)
 
-  &
-    margin: 4rem 0
-    line-height: 1.5
-    font-size: 1.5rem
+  strong
+    &:hover
+      cursor: pointer
 
-.code
-  background: #fafafa
-  border-radius: 5px
-  padding: 0.75rem
-  font-size: 1.1rem
+.subscribe_text
+  color: $white
+  font-weight: 700
+  font-style: normal
+  font-size: 34px
+  line-height: 44.27px
+  text-align: center
+  margin: 0
+  margin-top: 206px
 
-.grid
-  display: flex
-  align-items: center
-  justify-content: center
-  flex-wrap: wrap
-  max-width: 800px
+.subscribe_reason
+  color: $white
+  font-weight: 400
+  font-style: normal
+  font-size: 18.75px
+  line-height: 21.41px
+  text-align: center
+  margin: 0
+  margin-top: 85px
+  width: 619px
 
-.card
-  margin: 1rem
-  padding: 1.5rem
-  text-align: left
-  color: inherit
-  text-decoration: none
-  border: 1px solid #eaeaea
-  border-radius: 10px
-  transition: color 0.15s ease, border-color 0.15s ease
-  max-width: 300px
+.behindContainer
+  overflow: hidden
+  background: rgb(0,0,0)
+  background: linear-gradient(0deg, rgba(10,10,10,.96) 10%, rgba(1,6,56,1) 70%)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 180vh
+  z-index: 1
 
-  &:hover,
+.blueBokeh
+  position: absolute
+  top: -30px
+  right: calc( 50% - 750px )
 
-  &:focus,
-
-  &:active
-    color: #0070f3
-    border-color: #0070f3
-
-  & h2
-    margin: 0 0 1rem 0
-    font-size: 1.5rem
-
-  & p
-    margin: 0
-    font-size: 1.25rem
-    line-height: 1.5
-
-.logo
-  height: 1em
-  margin-left: 0.5rem
-
-@media (max-width: 600px)
-  .grid
-    width: 100%
-    flex-direction: column
+.lightsBokeh
+  position: absolute
+  bottom: 115.42px
+  left: calc( 50% - 750px )

@@ -1,0 +1,21 @@
+@mixin flex($align: center, $justify: center, $direction: column)
+  display: flex
+  align-items: $align
+  justify-content: $justify
+  flex-direction: $direction
+
+@mixin paddingHorizontal($left:  0px, $right: 0px)
+  padding-left: $left
+  padding-right: $right
+
+@mixin paddingVertical($top: 0px, $bottom: 0px)
+  padding-top: $top
+  padding-bottom: $bottom
+
+@mixin marginHorizontal($left:  0px, $right: 0px)
+  margin-left: $left
+  margin-right: $right
+
+@mixin marginVertical($top:  0px, $bottom: 0px)
+  margin-top: $top
+  margin-bottom: $bottom
